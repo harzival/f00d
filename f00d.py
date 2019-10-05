@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 class Meal ( object ):
     def __init__ (self, name ):
         self.name = name
