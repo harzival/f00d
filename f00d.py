@@ -1,102 +1,60 @@
 #!/usr/bin/python
 
-class Meal ( object ):
-    def __init__ (self, name ):
+class Recipe ( object ):
+    def __init__ ( self, dishList ):
+        self.name
+        self.dishesCreated = dishList
+
+class Dish ( object ):
+    def __init__ ( self, name,  ):
         self.name = name
-        self.serves
-        self.recipe
-        self.ingredientList
-        self.prepTime
-        self.cookTime
-        self.canBeFrozenAndDefrosted
-        self.cuisine
-        self.type.snack
-        self.type.dinner
-        self.type.lunch
-        self.type.breakfast
-    def snack (self): pass
-        
-        
-class Quantity ( object ):
-    def __init__ ( self, metric, value ):
-        self.metric = metric
-        self.value = value
-    def kg ( self, value ):
-        value = value * 1000
-        return Quantity ( "grams", value )
-    def g ( self, value ):
-        return Quantity ( "grams", value )
-    def l ( self, value ):
-        value = value * 1000
-        return Quantity ( "millilitre", value )
-    def ml ( self, value ):
-        return Quantity ( "millilitre", value )
-
-class Dates ( object ):
-    def __init__ ( self, date, label ):
-        self.date = date
-        self.label = label
-        self.bestBefore
-        self.useBy
-        self.displayUntil
-        self.sellBy = self.displayUntil
-        self.useByOnceSealBroken
-
-class PreservationInfo ( object ):
-    def __init__ ( self, dates ):
-        self.washed
-        self.keepRefrigerated
-        self.suitableForFreezing
-        self.sealBroken
-        self.nonPerishable
-        self.precooked
-        self.hasBeenFrozen
-        self.isFrozen
-        self.dates = dates
-
-class NutritionInfo ( object ):
-    def __init__ ( self, fat, energy, artificialFlavours, artificialColours, noAddedSugar ):
-        self.fat
-        self.fatOfWhichSatures
-        self.energy
-        self.carbohydrates
-        self.carbohydratesOfWhichAreSugars
-        self.salt
-        self.protien
-        self.artificialFlavours
-        self.artificialColours
-        self.noAddedSugar
-        self.unsweetened
 
 class Ingredient ( object ):
-    def __init__ (self, name, quantity ):
+    def __init__ ( self, name ):
         self.name = name
-        self.quantity = quantity
+        self.quantity = self.Quantity
 
-class IngredientList ( list ):
-    def __init__ (self, listOfIngredients ):
-        self = listOfIngredients
+    class Quantity ( object ):
+        def __init__ ( self, value, metric ):
+            self.value = value
+            self.metric = metric
 
-class PurchasedIngredient ( Ingredient ):
-    def __init__ ( self, ingredientName, specificItemName, brandName, quantity, cost, preservationInfo, nutritionInfo, ingredientList ):
-        Ingredient.__init__( self, ingredientName, quantity )
-        self.ingredientName     = self.name
-        self.specificItemName   = specificItemName
-        self.brandName          = brandName 
-        self.quantity           = quantity
-        self.cost               = cost
-        self.preservation       = preservationInfo
-        self.dates              = self.preservation.dates
-        self.nutrition          = nutritionInfo
-        self.ingredients        = ingredientList
-
-
-
+class Product ( object ):
+    def __init__ ( self, name, cost, vendor, ingredientList=[] ):
+        self.name = name
+        self.cost = self.Cost
+        self.vendor = self.Vendor
+        self.ingredientsGranted = ingredientList
+    class Cost ( object ):
+        def __init__ ( self, value, currency ):
+            self.value = value
+            self.currency = currency
+    class Vendor ( object ):
+        def __init__ ( self, productBrandName=None, retailerName=None, barcode=None, productUrl=None ):
 
 
+# class Dish ( object ):
+#     def __init__ ( self, name,  ):
+#         self.name = name
 
+# class Ingredient ( object ):
+#     def __init__ ( self, name ):
+#         self.name = name
+#     class Quantity ( object ):
+#         def __init__ ( self ):
 
+# class Product ( object ):
+#     def __init__ ( self ):
+#         self.advice = self.Advice()
+#     class Advice ( object ):
+#         def __init__ ( self ):
+#         class Preservation:
+#             def __init__ ( self ):
+#         class Nutrition:
+#             def __init__ ( self ):
+#         class Alergen:
+#             def __init__ ( self ):
+#         class Preperation:
+#             def __init__ ( self ):
+        
 
-
-duck = Meal ("duck")
-print ( isinstance (duck, Meal ) )

@@ -1,29 +1,36 @@
+class Dish ( object ):
+    def __init__ (self):
+        
+class Recipe ( object ):
+    def __init__ (self):
+        self.distList
+
+
 class Ingredient ( object ):
     
-    def __init__ (self, name, quantity ):
-
-        self.name = name
+    def __init__ ( self, name, quantity ):
+        self.name     = name
         self.quantity = quantity
 
     class Quantity ( object ):
 
         def __init__ ( self, metric, value ):
             self.metric = metric
-            self.value = value
+            self.value  = value
 
         def kg ( self, value ):
             value = value * 1000
-            return self._ ( "grams", value )
+            return self.__init__ ( "grams", value )
 
         def g ( self, value ):
-            return Quantity ( "grams", value )
+            return self.__init__ ( "grams", value )
 
         def l ( self, value ):
             value = value * 1000
-            return Quantity ( "millilitre", value )
+            return self.__init__ ( "millilitre", value )
 
         def ml ( self, value ):
-            return Quantity ( "millilitre", value )
+            return self.__init__ ( "millilitre", value )
 
 class Product ( object ):
 
@@ -37,15 +44,15 @@ class Product ( object ):
         preservationInfo    = None,
         nutritionInfo       = None,
         preperaionInfo      = None,
-        ingredientInstances = None ):
+        ingredientList      = None ):
         
         self.productName            = productName
         self.productBrandName       = productBrandName
         self.vendorList             = vendorList
-        self.cost                   = cost
+        self.cost                   = costInfo
         self.preservation           = preservationInfo
         self.nutrition              = nutritionInfo
-        self.ingredientInstances    = ingredientInstances
+        self.attributedIngredients  = ingredientList
 
     class PreservationInfo ( object ):
        
